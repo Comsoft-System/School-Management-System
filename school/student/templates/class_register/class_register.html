@@ -1,0 +1,46 @@
+{% extends 'front_pages/base2.html' %}
+{% block title %}Class Register{% endblock title %}
+{% block my %}
+    <div class="mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-primary text-white">
+                        <h2 class="text-center mb-0">Class Register</h2>
+                        <a class="btn btn-light btn-sm float-end" href="{% url 'class_register_add' %}">Add <i class="fa-solid fa-plus"></i></a>
+                    </div>
+                    <div class="card-body p-0">
+                        <table class="table table-hover table-bordered mb-0">
+                            <thead class="bg-light">
+                                <tr class="text-center">
+                                    <th class="text-primary">GR Number</th>
+                                    <th class="text-primary">Name</th>
+                                    <th class="text-primary">Father Name</th>
+                                    <th class="text-primary">Class Code</th>
+                                    <th class="text-primary">Section Code</th>
+                                    <th class="text-primary">Session Code</th>
+                                    <th class="text-primary">Present</th>
+                                    <th class="text-primary">Class Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for class_register in class_register %}
+                                    <tr class="text-center align-middle">
+                                        <td>{{ class_register.gr_number }}</td>
+                                        <td>{{ class_register.gr_number.name }}</td>
+                                        <td>{{ class_register.gr_number.father_name }}</td>
+                                        <td>{{ class_register.class_code }}</td>
+                                        <td>{{ class_register.section_code }}</td>
+                                        <td>{{ class_register.session_code }}</td>
+                                        <td>{{ class_register.present }}</td>
+                                        <td><a class="btn btn-warning btn-sm" href="{% url 'class_register_edit' class_register.gr_number %}">Edit <i class="fa-regular fa-pen-to-square"></i></a></td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock my %}

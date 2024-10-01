@@ -1,0 +1,45 @@
+{% extends 'front_pages/base.html' %}
+
+{% block content %}
+<br>
+<nav class="navbar navbar-expand-lg bg-secondary shadow-lg w-75 m-auto">
+    <ul class="navbar-nav m-auto">
+        <!-- Classes Button -->
+        <li>
+            <a class="btn me-5 {% if request.path == '/classes/' %}btn-primary{% else %}btn-secondary{% endif %} text-light" href="{% url 'classes' %}">
+                Classes
+            </a>
+        </li>
+
+        <!-- Section Button -->
+        <li>
+            <a class="btn me-5 {% if request.path == '/section/' %}btn-primary{% else %}btn-secondary{% endif %} text-light" href="{% url 'section' %}">
+                Section
+            </a>
+        </li>
+
+        <!-- Session Button -->
+        <li>
+            <a class="btn me-5 {% if request.path == '/session/' %}btn-primary{% else %}btn-secondary{% endif %} text-light" href="{% url 'session' %}">
+                Session
+            </a>
+        </li>
+
+        <!-- GR Register Button -->
+        <li>
+            <a class="btn me-5 {% if request.path == '/gr-register/' %}btn-primary{% else %}btn-secondary{% endif %} text-light" href="{% url 'gr_register' %}">
+                GR Register
+            </a>
+        </li>
+
+        <!-- Class Register Button -->
+        <li>
+            <a class="btn {% if request.path == '/class-register/' %}btn-primary{% else %}btn-secondary{% endif %} text-light" href="{% url 'class_register' %}">
+                Class Register
+            </a>
+        </li>
+    </ul>
+</nav>
+
+    {% block my %}{% endblock my %}
+{% endblock content %}

@@ -1,0 +1,102 @@
+{% extends 'front_pages/base.html' %}
+{% block title %}GR Register Add{% endblock title %}
+{% block content %}
+    <div class="mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-lg">
+                    <div class="card-header text-center bg-primary text-white">
+                        <h1>GR Register Add</h1>
+                    </div>
+                    <div class="card-body">
+                        <form action="{% url 'gr_register_edit' id%}" method="POST">
+                            <!-- Personal -->
+                            <div class="form-step form-step-active">
+                                <label class="col-form-label">{{ form.gr_number.label }}</label>
+                                {{ form.gr_number }}
+                                <div class="text-danger">{{ form.gr_number.errors }}</div>
+
+                                <label class="col-form-label">{{ form.name.label }}</label>
+                                {{ form.name }}
+                                <div class="text-danger">{{ form.name.errors }}</div>
+
+                                <label class="col-form-label">{{ form.father_name.label }}</label>
+                                {{ form.father_name }}
+                                <div class="text-danger">{{ form.father_name.errors }}</div>
+
+                                <label class="col-form-label">{{ form.gender.label }}</label>
+                                {{ form.gender }}
+                                <div class="text-danger">{{ form.gender.errors }}</div>
+
+                                <label class="col-form-label">{{ form.present.label }}</label>
+                                {{ form.present }}
+                                <div class="text-danger">{{ form.present.errors }}</div><br>
+
+                                <button type="button" class="btn btn-primary form-control btn-next" >Next</button>
+                            </div>
+                
+                            <!-- Location -->
+                            <div class="form-step form-step-active">
+                                <label class="col-form-label">{{ form.address.label }}</label>
+                                {{ form.address }}
+                                <div class="text-danger">{{ form.address.errors }}</div>
+                                
+                                <label class="col-form-label">{{ form.last_school.label }}</label>
+                                {{ form.last_school }}
+                                <div class="text-danger">{{ form.last_school.errors }}</div>
+                                
+                                <label class="col-form-label">{{ form.cell_number_1.label }}</label>
+                                {{ form.cell_number_1 }}
+                                <div class="text-danger">{{ form.cell_number_1.errors }}</div>
+                                
+                                <label class="col-form-label">{{ form.cell_number_2.label }}</label>
+                                {{ form.cell_number_2 }}
+                                <div class="text-danger">{{ form.cell_number_2.errors }}</div>
+                                
+                                <label class="col-form-label">{{ form.location.label }}</label>
+                                {{ form.location }}
+                                <div class="text-danger">{{ form.location.errors }}</div><br>
+                                
+                                <button type="button" class="btn btn-secondary btn-prev">Previous</button>
+                                <button type="button" class="btn btn-primary float-end btn-next">Next</button>
+                            </div>
+                
+                            <!-- Classes -->
+                            <div class="form-step form-step-active">
+                                <label class="col-form-label">{{ form.class_of_admission.label }}</label>
+                                {{ form.class_of_admission }}
+                                <div class="text-danger">{{ form.class_of_admission.errors }}</div>
+                                
+                                <label class="col-form-label">{{ form.class_of_removal.label }}</label>
+                                {{ form.class_of_removal }}
+                                <div class="text-danger">{{ form.class_of_removal.errors }}</div><br>
+                                
+                                <button type="button" class="btn btn-secondary btn-prev">Previous</button>
+                                <button type="button" class="btn btn-primary float-end btn-next">Next</button>
+                            </div>
+                
+                            <!-- Dates -->
+                            <div class="form-step form-step-active">
+                                <label class="col-form-label">{{ form.date_of_birth.label }}</label>
+                                {{ form.date_of_birth }}
+                                <div class="text-danger">{{ form.date_of_birth.errors }}</div>
+                                
+                                <label class="col-form-label">{{ form.date_of_admission.label }}</label>
+                                {{ form.date_of_admission }}
+                                <div class="text-danger">{{ form.date_of_admission.errors }}</div>
+
+                                <label class="col-form-label">{{ form.date_of_removal.label }}</label>
+                                {{ form.date_of_removal }}
+                                <div class="text-danger">{{ form.date_of_removal.errors }}</div><br>
+
+                                <button type="button" class="btn btn-secondary btn-prev">Previous</button>
+                                <button type="submit" class="btn btn-primary float-end">GR Register Edit</button>
+                            </div>
+                        {% csrf_token %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

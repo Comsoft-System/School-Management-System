@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>School | {% block title %}Home{% endblock title %}</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary shadow-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light ms-3" href="{% url 'home' %}">
+                <i class="fa-solid fa-school"></i> School
+            </a>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-secondary sidebar collapse">
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item"><br>
+                            <a class="nav-link active text-light" href="{% url 'home' %}">Student</a>
+                            <hr>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="{% url 'classes' %}">Teacher</a>
+                        </li>
+                        <hr>
+                </div><br>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                {% block content %}
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                </div>
+                <p>Your main content goes here...</p>
+                {% endblock content %}
+            </main>
+        </div>
+    </div>
+
+    <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    {% comment %} <script src="{% static 'bootstrap\js\bootstrap.bundle.min.js' %}"></script> {% endcomment %}
+</body>
+</html>
