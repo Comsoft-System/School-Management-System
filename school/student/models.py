@@ -1,4 +1,5 @@
 from django.db import models
+# from fee.models import Concession
 
 # Basic Tables
 class Classes(models.Model):
@@ -28,10 +29,11 @@ class GRRegister(models.Model):
     name = models.CharField(max_length = 100)
     father_name = models.CharField(max_length = 100)
     address = models.TextField()
-    date_of_birth = models.DateField(null = True, blank = True)
+    date_of_birth = models.DateField()
     date_of_admission = models.DateField()
     class_of_admission = models.ForeignKey(Classes, on_delete = models.CASCADE)
     last_school = models.CharField(max_length = 100, null = True, blank = True)
+    concession_code = models.ForeignKey('fee.Concession', on_delete = models.CASCADE)
     cell_number_1 = models.CharField(max_length = 15)
     cell_number_2 = models.CharField(max_length = 15, null = True, blank = True)
     location = models.CharField(max_length = 100)
