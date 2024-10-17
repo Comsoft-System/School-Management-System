@@ -1,5 +1,4 @@
 from django.db import models
-# from fee.models import Concession
 
 # Basic Tables
 class Classes(models.Model):
@@ -7,21 +6,21 @@ class Classes(models.Model):
     class_name = models.CharField(max_length = 200)
 
     def __str__(self):
-        return self.class_name
+        return f"{self.class_name}"
 
 class Section(models.Model):
     section_code = models.AutoField(primary_key = True)
     section_name = models.CharField(max_length = 200)
 
     def __str__(self):
-        return self.section_name
+        return f"{self.section_name}"
 
 class Session(models.Model):
     session_code = models.AutoField(primary_key = True)
     session_name = models.CharField(max_length = 200)
 
     def __str__(self):
-        return self.session_name
+        return f"{self.session_name}"
     
 # Operative Tables
 class GRRegister(models.Model):
@@ -33,7 +32,7 @@ class GRRegister(models.Model):
     date_of_admission = models.DateField()
     class_of_admission = models.ForeignKey(Classes, on_delete = models.CASCADE)
     last_school = models.CharField(max_length = 100, null = True, blank = True)
-    concession_code = models.ForeignKey('fee.Concession', on_delete = models.CASCADE)
+    concession_code = models.ForeignKey('fee.Concession', on_delete = models.CASCADE, null = True, blank = True)
     cell_number_1 = models.CharField(max_length = 15)
     cell_number_2 = models.CharField(max_length = 15, null = True, blank = True)
     location = models.CharField(max_length = 100)
@@ -43,7 +42,7 @@ class GRRegister(models.Model):
     present = models.BooleanField(default = True)
 
     def __str__(self):
-        return str(self.gr_number)
+        return f"{self.gr_number}"
 
 class ClassRegister(models.Model):
     gr_number = models.ForeignKey(GRRegister, on_delete = models.CASCADE)
@@ -53,4 +52,4 @@ class ClassRegister(models.Model):
     present = models.BooleanField(default = True)
 
     def __str__(self):
-        return str(self.gr_number)
+        return f"{self.gr_number}"

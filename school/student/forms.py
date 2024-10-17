@@ -35,23 +35,10 @@ class SessionForm(forms.ModelForm):
         }
 
 # GR Registers
-class GRRegisterPersonalForm(forms.ModelForm):
-    class Meta:
-        model = GRRegister
-        fields = ['gr_number', 'name', 'father_name', 'gender','present']
-
-        widgets = {
-            'gr_number':forms.NumberInput(attrs={'class':'form-control'}),
-            'name':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Name'}),
-            'father_name':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Father Name'}),
-            'gender':forms.Select(attrs={'class':'form-control'}),
-            'present':forms.TextInput(attrs={'class':'form-control'}),
-        }
-
 class GRRegisterForm(forms.ModelForm):
     class Meta:
         model = GRRegister
-        fields = ['gr_number', 'name', 'father_name', 'address', 'date_of_birth','date_of_admission','class_of_admission','last_school','cell_number_1','cell_number_2','location','gender','class_of_removal','date_of_removal','present']
+        fields = ['gr_number', 'name', 'father_name', 'address', 'date_of_birth','date_of_admission','class_of_admission','last_school','concession_code','cell_number_1','cell_number_2','location','gender','class_of_removal','date_of_removal','present']
 
         widgets = {
             'gr_number':forms.NumberInput(attrs={'class':'form-control', 'placeholder':'GR Number'}),
@@ -62,10 +49,11 @@ class GRRegisterForm(forms.ModelForm):
             'date_of_admission':forms.DateInput(attrs={'class':'form-control', 'placeholder':'Date of Admission'}),
             'class_of_admission':forms.Select(attrs={'class':'form-control'}),
             'last_school':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Last School'}),
-            'cell_number_1':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Cell No. 1'}),
-            'cell_number_2':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Cell No. 2'}),
+            'concession_code':forms.Select(attrs={'class':'form-control'}),
+            'cell_number_1':forms.TextInput(attrs={'class':'form-control','placeholder': 'Cell No. 1', 'pattern': '[0-9]{10}'}),
+            'cell_number_2':forms.TextInput(attrs={'class':'form-control', 'placeholder': 'Cell No. 2', 'pattern': '[0-9]{10}'}),
             'location':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Location'}),
-            'gender':forms.Select(attrs={'class':'form-control', 'placeholder':'Location'}),
+            'gender':forms.Select(attrs={'class':'form-control'}),
             'class_of_removal':forms.Select(attrs={'class':'form-control'}),
             'date_of_removal':forms.DateInput(attrs={'class':'form-control', 'placeholder':'Date of removal'}),
             'present':forms.TextInput(attrs={'class':'form-control'}),

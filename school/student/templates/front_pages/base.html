@@ -26,12 +26,11 @@
                     <ul class="nav flex-column">
                         <li class="nav-item"><br>
                             <a class="nav-link active text-light" href="{% url 'home' %}">Student</a>
-                            <hr>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" href="{% url 'classes' %}">Teacher</a>
                         </li>
                         <hr>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="{% url 'fee_type' %}">Fee</a>
+                        </li>
                 </div><br>
             </nav>
 
@@ -48,6 +47,7 @@
     </div>
 
     <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+    {% comment %} <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> {% endcomment %}
     <script src="{% static 'js/script.js' %}"></script>
     {% comment %} <script src="{% static 'bootstrap\js\bootstrap.bundle.min.js' %}"></script> {% endcomment %}
 </body>

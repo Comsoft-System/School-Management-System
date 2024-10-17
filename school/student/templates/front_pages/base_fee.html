@@ -1,0 +1,44 @@
+{% extends 'front_pages/base.html' %}
+
+{% block content %}
+<br>
+<nav class="navbar navbar-expand-lg bg-secondary shadow-lg w-75 m-auto">
+    <ul class="navbar-nav m-auto">
+        <!-- Classes Button -->
+        <li>
+            <a class="btn me-5 {% if request.path == '/fee-type/' %}btn-primary{% else %}btn-secondary{% endif %} text-light" href="{% url 'fee_type' %}">
+                Fee Type
+            </a>
+        </li>
+
+        <!-- Section Button -->
+        <li>
+            <a class="btn me-5 {% if request.path == '/concession/' %}btn-primary{% else %}btn-secondary{% endif %} text-light" href="{% url 'concession' %}">
+                Concession
+            </a>
+        </li>
+
+        <!-- Session Button -->
+        <li>
+            <a class="btn me-5 {% if request.path == '/class-fee/' %}btn-primary{% else %}btn-secondary{% endif %} text-light" href="{% url 'class_fee' %}">
+                Class Fee
+            </a>
+        </li>
+
+        <!-- GR Register Button -->
+        <li>
+            <a class="btn me-5 {% if request.path == '/fee/' %}btn-primary{% else %}btn-secondary{% endif %} text-light" href="{% url 'fee' %}">
+                Fee
+            </a>
+        </li>
+        <!-- GR Register Button -->
+        <li>
+            <a class="btn me-5 {% if request.path == '/fee-submit/' %}btn-primary{% else %}btn-secondary{% endif %} text-light" href="{% url 'fee_submit' %}">
+                Fee Submit
+            </a>
+        </li>
+    </ul>
+</nav>
+
+    {% block two %}{% endblock two %}
+{% endblock content %}

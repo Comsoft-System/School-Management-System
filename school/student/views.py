@@ -91,6 +91,8 @@ def grRegisterAdd(request):
         if form.is_valid():
             form.save()
             return redirect('gr_register')
+        else:
+            print(form.errors)
     return render(request, 'gr_register/gr_register_add.html', locals())
 
 def grRegisterEdit(request, id):

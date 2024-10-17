@@ -9,8 +9,9 @@
                         <h1>GR Register Add</h1>
                     </div>
                     <div class="card-body">
-                        <form action="{% url 'gr_register_edit' id%}" method="POST">
+                        <form action="{% url 'gr_register_edit' id %}" method="POST">
                             <!-- Personal -->
+                            {% csrf_token %}
                             <div class="form-step form-step-active">
                                 <label class="col-form-label">{{ form.gr_number.label }}</label>
                                 {{ form.gr_number }}
@@ -66,6 +67,10 @@
                                 <label class="col-form-label">{{ form.class_of_admission.label }}</label>
                                 {{ form.class_of_admission }}
                                 <div class="text-danger">{{ form.class_of_admission.errors }}</div>
+
+                                <label class="col-form-label">{{ form.concession_code.label }}</label>
+                                {{ form.concession_code }}
+                                <div class="text-danger">{{ form.concession_code.errors }}</div><br>
                                 
                                 <label class="col-form-label">{{ form.class_of_removal.label }}</label>
                                 {{ form.class_of_removal }}
@@ -92,7 +97,6 @@
                                 <button type="button" class="btn btn-secondary btn-prev">Previous</button>
                                 <button type="submit" class="btn btn-primary float-end">GR Register Edit</button>
                             </div>
-                        {% csrf_token %}
                         </form>
                     </div>
                 </div>

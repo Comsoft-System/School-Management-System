@@ -58,3 +58,55 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+// function updateClassCodeDueAmountAndSection(gr_numberSelect) {
+//     var gr_number = gr_numberSelect.value;
+
+//     // Class code update karna
+//     $.ajax({
+//         url: '/get-class-code/' + gr_number + '/',
+//         method: 'GET',
+//         success: function(response) {
+//             if (response.class_code) {
+//                 $('#id_class_code').val(response.class_code); // Class code ko auto-fill karen
+//             } else {
+//                 alert(response.error);
+//             }
+//         },
+//         error: function() {
+//             alert('Error fetching class code.');
+//         }
+//     });
+
+//     // Due amount update karna
+//     $.ajax({
+//         url: '/get-due-amount/' + gr_number + '/',
+//         method: 'GET',
+//         success: function(response) {
+//             if (response.due_amount) {
+//                 $('#id_due_amount').val(response.due_amount); // Due amount ko auto-fill karen
+//             } else {
+//                 alert(response.error);
+//             }
+//         },
+//         error: function() {
+//             alert('Error fetching due amount.');
+//         }
+//     });
+    
+//     $.ajax({
+//         url: '/get-section/' + gr_number + '/',
+//         method: 'GET',
+//         success: function(response) {
+//             if (response.section_code) {
+//                 $('#id_section_code').val(response.section_code); // Due amount ko auto-fill karen
+//             } else {
+//                 alert(response.error);
+//             }
+//         },
+//         error: function() {
+//             alert('Error fetching due amount.');
+//         }
+//     });
+// }

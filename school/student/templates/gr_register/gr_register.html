@@ -17,6 +17,7 @@
                                     <th class="text-primary">Name</th>
                                     <th class="text-primary">Father Name</th>
                                     <th class="text-primary">Class</th>
+                                    <th class="text-primary">Concession</th>
                                     <th class="text-primary">Location</th>
                                     <th class="text-primary">Present</th>
                                     <th class="text-primary">GR Register Edit</th>
@@ -29,6 +30,7 @@
                                         <td>{{ gr_register.name }}</td>
                                         <td>{{ gr_register.father_name }}</td>
                                         <td>{{ gr_register.class_of_admission }}</td>
+                                        <td>{{ gr_register.concession_code }}</td>
                                         <td>{{ gr_register.location }}</td>
                                         <td>{{ gr_register.present }}</td>
                                         <td><a class="btn btn-warning btn-sm" href="{% url 'gr_register_edit' gr_register.gr_number %}">Edit <i class="fa-regular fa-pen-to-square"></i></a></td>

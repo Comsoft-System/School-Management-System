@@ -15,4 +15,4 @@ class AdminClassFee(admin.ModelAdmin):
 
 @admin.register(Fee)
 class AdminFee(admin.ModelAdmin):
-    list_display = ['gr_number', 'class_code', 'section_code','due_amount','submit_amount','mounth','fee_status',]
+    list_display = ['gr_number', 'class_code', 'section_code','due_amount','submit_amount','fee_status',]
